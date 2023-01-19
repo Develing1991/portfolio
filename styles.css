@@ -1,0 +1,20 @@
+:root {
+  --color-primary: #a5d6a7;
+  --base-space: 8px;
+}
+
+div {
+  color: var(--color-primary, dodgerblue);
+  margin-left: calc(var(--base-space) * 2);
+}
+
+@media screen and (max-width: 768px) {
+  :root {
+    --color-primary: salmon;
+    --base-space: 4px;
+  }
+}
+
+[data-hello-world="helloWorld!"] {
+  background-color: orange;
+}
