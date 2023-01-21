@@ -29,3 +29,16 @@ function scrollIntoView(selector) {
   const scollTo = document.querySelector(selector);
   scollTo.scrollIntoView({ behavior: "smooth" });
 }
+
+// 스크롤 다운시 home 투명하게
+const homeEl = document.querySelector("#home");
+const homeContainerEl = document.querySelector(".home__container");
+const homeHeight = homeEl.getBoundingClientRect().height;
+document.addEventListener("scroll", function () {
+  const opacityRate = 1 - Number((window.scrollY / homeHeight).toFixed(1)); // 1 -> 0.9 ->... 0
+  // console.log(window.scrollY / homeHeight);
+
+  if (opacityRate < 0) return;
+  homeContainerEl.style.opacity = opacityRate;
+  console.log(opacityRate);
+});
