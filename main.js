@@ -42,3 +42,18 @@ document.addEventListener("scroll", function () {
   homeContainerEl.style.opacity = opacityRate;
   console.log(opacityRate);
 });
+
+//스크롤 업 버튼 보여주기
+const arrowUpBtnEl = document.querySelector(".arrow-up");
+document.addEventListener("scroll", function () {
+  if (window.scrollY > homeHeight / 2) {
+    arrowUpBtnEl.classList.add("visible");
+  } else {
+    arrowUpBtnEl.classList.remove("visible");
+  }
+});
+
+// 스크롤 업 버튼 누르면 위로 올라가기
+arrowUpBtnEl.addEventListener("click", function () {
+  scrollIntoView("#home");
+});
